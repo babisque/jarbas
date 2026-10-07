@@ -1,0 +1,111 @@
+# ---------------------------------------------
+# .NET build output
+# ---------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]64/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+publish/
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+!**/[Pp]ackages/build/
+project.lock.json
+project.fragment.lock.json
+
+# ---------------------------------------------
+# Secrets & local configuration
+# ---------------------------------------------
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+appsettings.Local.json
+secrets.json
+*.pfx
+*.p12
+*.key
+*.pem
+
+# ---------------------------------------------
+# Visual Studio
+# ---------------------------------------------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.rsuser
+*.vspscc
+*.vssscc
+_ReSharper*/
+*.DotSettings.user
+launchSettings.local.json
+
+# ---------------------------------------------
+# VS Code
+# ---------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ---------------------------------------------
+# JetBrains Rider
+# ---------------------------------------------
+.idea/
+*.sln.iml
+
+# ---------------------------------------------
+# Tests & coverage
+# ---------------------------------------------
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+coverage/
+coverage*.json
+coverage*.xml
+*.coverage
+*.coveragexml
+
+# ---------------------------------------------
+# Local databases
+# ---------------------------------------------
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.mdf
+*.ldf
+
+# ---------------------------------------------
+# OS files
+# ---------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ---------------------------------------------
+# Misc
+# ---------------------------------------------
+*.log
+*.tmp
+*.swp
+*~
