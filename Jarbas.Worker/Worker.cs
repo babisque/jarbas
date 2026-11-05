@@ -1,16 +1,19 @@
 namespace Jarbas.Worker;
 
-public class Worker(ILogger<Worker> logger) : BackgroundService
+public class Worker(ILogger<Worker> logger, IConfiguration configuration) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        while (!stoppingToken.IsCancellationRequested)
+        var httpClient = new HttpClient();
+        var response = await httpClient.GetAsync($"https://api.telegram.org/bot{configuration["Telegram:BotToken"]}/getMe");
+
+        if (response.IsSuccessStatusCode)
         {
-            if (logger.IsEnabled(LogLevel.Information))
-            {
-                logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            }
-            await Task.Delay(1000, stoppingToken);
+            logger.LogInformation("Bot is running successfully.");
+        }
+        else
+        {
+            logger.LogError("Failed to connect to the Telegram Bot API.");
         }
     }
 }
